@@ -181,6 +181,7 @@ public final class LuceneServlet extends HttpServlet {
                 handleWelcomeReq(req, resp);
                 return;
             case 5:
+			case 6:
                 final DatabaseIndexer indexer = getIndexer(req);
                 if (indexer == null) {
                     ServletUtils.sendJsonError(req, resp, 500, "error_creating_index");

@@ -35,7 +35,8 @@ public class PathParts {
     }
 
     public PathParts(final String path) {
-        matcher = QUERY_REGEX.matcher(path);
+        String newPath = ContextPathUtils.getContextPath(path);
+        matcher = QUERY_REGEX.matcher(newPath);
         if (!matcher.matches()) {
             matcher = GLOBAL_REGEX.matcher(path);
         }
